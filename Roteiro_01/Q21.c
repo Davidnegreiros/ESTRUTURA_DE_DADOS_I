@@ -12,7 +12,7 @@ int main(){
 
     do{
         printf("\n\nEscolha uma das opcoes\n");
-        printf("\n[1] Maximo Divisor Comum entre dois numero inteiros.");
+        printf("\n[1] Maximo Divisor Comum entre dois numeros inteiros.");
         printf("\n[2] Fatorial de um numero natural.");
         printf("\n[3] A serie de fibonacci.");
         printf("\n[4] Verificar se n e' um numero natural primo.");
