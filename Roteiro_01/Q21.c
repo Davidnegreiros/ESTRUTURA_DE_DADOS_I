@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <math.h>
 
-//int MDC(int n1, int n2);
+int MDC(int n1, int n2);
 void fat(int n1, int *fatorial);
-void fibonacci(int n1); // Não consegui fazer de forma recursiva.
+void fibonacci(int n1);
 void isPrime(int n1, int *cont);
 
 int main(){
@@ -12,7 +12,7 @@ int main(){
 
     do{
         printf("\n\nEscolha uma das opcoes\n");
-        //printf("\n[1] Máximo Divisor Comum entre dois número inteiros.");
+        printf("\n[1] Maximo Divisor Comum entre dois numero inteiros.");
         printf("\n[2] Fatorial de um numero natural.");
         printf("\n[3] A serie de fibonacci.");
         printf("\n[4] Verificar se n e' um numero natural primo.");
@@ -23,13 +23,15 @@ int main(){
     switch (op)
     {
     case 1:
-        //printf("\n\nDigite o primeiro valor = ");
-        //scanf("%d", &n1);
-        //printf("\nDigite o segundo valor = ");
-        //scanf("%d", &n2);
-    
-        //result = MDC(n1, n2);
-        //printf("\n\nMDC = %d",result);
+        printf("\n\nDigite o primeiro valor = ");
+        scanf("%d", &n1);
+        printf("\nDigite o segundo valor = ");
+        scanf("%d", &n2);
+        
+        int result;
+
+        result = MDC(n1, n2);
+        printf("\n\nMDC = %d",result);
         break;
     
     case 2:
@@ -67,6 +69,16 @@ int main(){
         break;
     }
     return(0);
+}
+
+int MDC(int n1, int n2){
+
+    if(n1 % n2 == 0){
+        return(n2);
+    }
+    else if(n1 % n2 != 0){
+        return(MDC(n2, (n1 % n2)));
+    }
 }
 
 void fat(int n1, int *fatorial){
