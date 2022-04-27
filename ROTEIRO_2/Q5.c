@@ -37,6 +37,7 @@ void Listar_Contatos_Por_Profissao(char *P){
                 cont2++;
             }
         }
+        // Se cont2 for igual a cont1 imprime a profissão escolhida.
         if(cont2 == cont1){
             printf("\n(%d) -> %s -> %s -> (%s)\n", id, nome, profissao, telefone);
         }
