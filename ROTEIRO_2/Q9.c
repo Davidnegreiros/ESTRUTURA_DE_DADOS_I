@@ -37,8 +37,8 @@ void Altera_Telefone(int *identificador, char *novo_telefone){
             fprintf(arquivo2, "%d %s %s %s\n", id, nome, profissao, novo_telefone);
         }
     }
-    //fclose(arquivo1);
-    //fclose(arquivo2);
-    //remove("agenda.dat");
-    //rename("agenda_aux.dat", "agenda.dat");
+    fclose(arquivo1);
+    fclose(arquivo2);
+    remove("agenda.dat");
+    rename("agenda_aux.dat", "agenda.dat");
 }
