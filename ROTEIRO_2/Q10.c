@@ -16,11 +16,13 @@ void Exporta_Contato(int *identificador){
     char profissao[26];
     char telefone[14];
 
+    // Abre o arquivo para leitura.
     FILE *arquivo1 = fopen("agenda.dat", "r");
     if(arquivo1 == NULL){
        printf("\n\nO arquivo1 nao pode ser aberto ou nao existe!\n\n");
     }
 
+    // Cria um arquivo para escrita.
     FILE *arquivo2 = fopen("agenda_aux.dat", "w");
     if(arquivo2 == NULL){
        printf("\n\nO arquivo2 nao pode ser aberto ou nao existe!\n\n");
@@ -36,11 +38,12 @@ void Exporta_Contato(int *identificador){
         if(id == identificador){
             fprintf(arquivo2, "%d %s %s %s\n", id, nome, profissao, telefone);
             
-            // Verifca quantas letras tem o nome armazenado em "nome".
+            // Verifca quantas letras tem o nome armazenado no vetor "nome".
             for(int i = 0; nome[i] != '\0'; i++){
                 cont++;
             }
 
+            // Faz a concatenação das strings (nome do contato mais a extensão .txt).
             char extensao[] = ".txt";
             char nome_arquivo[20];
 

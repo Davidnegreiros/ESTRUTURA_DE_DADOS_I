@@ -24,9 +24,9 @@ void Remove_Contato(int identificador){
         printf("\n\nO arquivo2 nao pode ser aberto ou nao existe!\n\n");
     }
 
+    // Percorre todo o arquivo, se os IDs forem iguais remove o contato.
     while(!feof(arquivo2)){
         fscanf(arquivo2, "%d %s %s %s", &id, &nome, &profissao, &telefone);
-        //printf("(%d) -> %s -> %s -> (%s)\n", id, nome, profissao, telefone);
 
         if(id != identificador){
             fprintf(arquivo1, "%d %s %s %s\n", id, nome, profissao, telefone);
